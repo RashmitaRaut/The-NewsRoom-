@@ -37,3 +37,31 @@ fun NewsScreenTopBar(
     )
 
 }
+
+
+/*ppppppppppppppppppppppppppppppppppppppppppppppppppp*/
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun NewsScreeTopBar(
+    scrollBehavior: TopAppBarScrollBehavior,
+    onSearchIconClicked: () -> Unit
+){
+    TopAppBar(
+        scrollBehavior = scrollBehavior,
+        title = { Text(text = "Newsroom", fontWeight = FontWeight.Bold)},
+        actions = {
+            IconButton(onClick = onSearchIconClicked) {
+                Icon(imageVector = Icons.Default.Search,
+                    contentDescription = "Search")
+            }
+        },
+        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+            actionIconContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+
+            )
+    )
+
+}
